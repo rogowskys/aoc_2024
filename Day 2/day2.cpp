@@ -3,20 +3,14 @@
 #include <algorithm>
 
 bool isSafe(std::vector<int>& singleRow){
-    bool flow = NULL;  // False = decreasing, True = increasing
+    bool isSafe = false;
 
     for (size_t i = 0; i < singleRow.size(); i++){
-        if (singleRow[i] > singleRow[i+1]){
-            flow = false;
-            break;
-        }
-        else if (singleRow[i] < singleRow[i+1]){
-            flow = true;
-            break;
-        }
+        
+
     }
 
-
+    return isSafe;
 }
 
 
@@ -33,14 +27,24 @@ int main()
         if (std::cin.peek() == '\n')
         {
             table.push_back(row);
+            for(size_t i = 0; i < row.size(); i++){
+                std::cout << row[i] << " ";
+            }
+            std::cout << std::endl;
             row.clear();
             std::cin.ignore();
         }
     }
 
+    for (size_t i = 0; i < table.size(); i++)
+    {
+        if (isSafe(table[i]))
+        {
+            safeCount++;
+        }
+    }
 
-
-
+    std::cout << safeCount << std::endl;
 
     return EXIT_SUCCESS;
 }
