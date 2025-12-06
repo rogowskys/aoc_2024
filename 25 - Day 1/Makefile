@@ -3,10 +3,10 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++20
 
 # Target executable
-TARGET = day1
+TARGET = day1p
 
 # Source files
-SRC = day1.cpp
+SRC = day1p2.cpp
 
 # Build rules
 all: $(TARGET)
